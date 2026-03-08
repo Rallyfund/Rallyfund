@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rallyfund — Student Portal</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/student.css" />
+</head>
+
+<body class="student-body">
+
+    <!-- HEADER -->
+    <header class="student-header">
+        <a href="../index.html" class="logo">
+            <span class="logo-icon">⚡</span>
+            <span class="logo-text">Rallyfund</span>
+        </a>
+        <div class="student-header-right">
+            <span class="badge badge-green">🏈 Lincoln Football</span>
+            <div class="user-avatar"
+                style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--gold));display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--navy)">
+                JW</div>
+        </div>
+    </header>
+
+    <!-- ONBOARDING -->
+    <div class="onboarding-overlay" id="onboardingOverlay">
+        <div class="onboarding-card">
+            <div class="onboard-logo">⚡</div>
+            <h2>Welcome to Rallyfund!</h2>
+            <p class="text-muted">Enter your info to join your team's fundraiser.</p>
+            <form id="onboardForm" style="margin-top:24px;display:flex;flex-direction:column;gap:14px">
+                <div class="form-group">
+                    <label class="form-label">Your Name</label>
+                    <input class="form-input" placeholder="Jake Williams" id="ob-name" required />
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Campaign Join Code</label>
+                    <input class="form-input" placeholder="LINCOLN26" id="ob-code" required />
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Join Campaign
+                    →</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MAIN APP -->
+    <div class="student-app" id="studentApp" style="display:none">
+
+        <!-- CAMPAIGN BANNER -->
+        <div class="campaign-banner">
+            <div class="orb orb-green" style="width:300px;height:300px;top:-100px;left:-50px"></div>
+            <div class="container">
+                <div class="campaign-banner-inner">
+                    <div class="campaign-banner-text">
+                        <h1>Lincoln High Football — Fall 2026</h1>
+                        <p class="text-muted" style="margin-top:6px">Fundraiser closes in <strong class="text-gold">12
+                                days</strong></p>
+                    </div>
+                    <a href="donate.html?id=lincoln-football" target="_blank" class="btn btn-secondary btn-sm">Preview
+                        Donor Page →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="padding-top:32px;padding-bottom:60px">
+            <div class="student-grid">
+
+                <!-- LEFT COL -->
+                <div class="student-left">
+
+                    <!-- PROGRESS RING CARD -->
+                    <div class="card progress-card">
+                        <h3 class="card-heading" style="margin-bottom:20px">Your Progress</h3>
+                        <div class="ring-container">
+                            <svg class="progress-ring" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <circle class="ring-bg" cx="100" cy="100" r="80" />
+                                <circle class="ring-fill" cx="100" cy="100" r="80" id="ringFill" />
+                            </svg>
+                            <div class="ring-center">
+                                <div class="ring-amount" id="ringAmount">$0</div>
+                                <div class="ring-label text-muted">raised</div>
+                            </div>
+                        </div>
+                        <div class="ring-stats">
+                            <div class="ring-stat">
+                                <div class="ring-stat-value text-green" id="stat-donors">0</div>
+                                <div class="ring-stat-label text-muted">Donors</div>
+                            </div>
+                            <div class="ring-stat-divider"></div>
+                            <div class="ring-stat">
+                                <div class="ring-stat-value text-gold" id="stat-contacts">0</div>
+                                <div class="ring-stat-label text-muted">Contacts</div>
+                            </div>
+                            <div class="ring-stat-divider"></div>
+                            <div class="ring-stat">
+                                <div class="ring-stat-value" id="stat-sent">0</div>
+                                <div class="ring-stat-label text-muted">Sent</div>
+                            </div>
+                        </div>
+                        <div class="personal-goal">
+                            <div class="flex-between" style="font-size:0.85rem;margin-bottom:8px">
+                                <span class="text-muted">Personal Goal</span>
+                                <span class="text-green">$420 / $500</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:84%" id="personalGoalBar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MESSAGES PREVIEW -->
+                    <div class="card" style="margin-top:24px">
+                        <h3 class="card-heading" style="margin-bottom:4px">Message Sequence</h3>
+                        <p class="text-muted" style="font-size:0.82rem;margin-bottom:18px">What your contacts will
+                            receive</p>
+                        <div class="message-sequence">
+                            <div class="msg-step completed">
+                                <div class="msg-dot"></div>
+                                <div class="msg-content">
+                                    <div class="msg-label">Day 1 — Introduction</div>
+                                    <div class="msg-preview">"Hi [Name]! This is Jake Williams. I'm raising money for
+                                        Lincoln High Football..." <span class="text-green">✓ Sent to 48 contacts</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="msg-line completed"></div>
+                            <div class="msg-step completed">
+                                <div class="msg-dot"></div>
+                                <div class="msg-content">
+                                    <div class="msg-label">Day 5 — Personal Story</div>
+                                    <div class="msg-preview">"Football has meant everything to me this year..." <span
+                                            class="text-green">✓ Sent</span></div>
+                                </div>
+                            </div>
+                            <div class="msg-line active"></div>
+                            <div class="msg-step active">
+                                <div class="msg-dot ai-sending"></div>
+                                <div class="msg-content">
+                                    <div class="msg-label">Day 10 — Midpoint Update <span class="badge badge-gold"
+                                            style="font-size:0.65rem;margin-left:6px">Sending tonight 7PM</span></div>
+                                    <div class="msg-preview">"We're halfway there! $4,280 raised so far..."</div>
+                                </div>
+                            </div>
+                            <div class="msg-line"></div>
+                            <div class="msg-step pending">
+                                <div class="msg-dot pending-dot"></div>
+                                <div class="msg-content">
+                                    <div class="msg-label">Day 14 — Final Push</div>
+                                    <div class="msg-preview">"Last chance to support our team..."</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT COL: CONTACTS -->
+                <div class="student-right">
+                    <div class="card">
+                        <div class="flex-between" style="margin-bottom:16px">
+                            <h3 class="card-heading">My Contacts <span class="text-muted"
+                                    style="font-weight:400;font-size:0.85rem">(48)</span></h3>
+                            <button class="btn btn-primary btn-sm" id="addContactBtn">+ Add Contacts</button>
+                        </div>
+                        <div style="margin-bottom:14px">
+                            <input class="form-input" placeholder="Search contacts..." id="contactSearch" />
+                        </div>
+                        <div class="contact-filters">
+                            <button class="filter-btn active" data-filter="all">All (48)</button>
+                            <button class="filter-btn" data-filter="donated">Donated (14)</button>
+                            <button class="filter-btn" data-filter="sent">Pending (31)</button>
+                            <button class="filter-btn" data-filter="queued">Queued (3)</button>
+                        </div>
+                        <div class="contact-list" id="contactList"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ADD CONTACT MODAL -->
+    <div class="modal-overlay" id="addContactModal" style="display:none">
+        <div class="modal" style="max-width:480px">
+            <div class="modal-header">
+                <h2>Add Contacts</h2>
+                <button class="modal-close" id="addContactClose">✕</button>
+            </div>
+            <div class="sync-options">
+                <div class="sync-option-card" id="syncPhoneBtn">
+                    <div class="sync-icon">📱</div>
+                    <div class="sync-label">Sync from Phone</div>
+                    <div class="sync-sub text-muted">Import all contacts instantly</div>
+                </div>
+                <div class="sync-option-card" id="syncManualBtn">
+                    <div class="sync-icon">✏️</div>
+                    <div class="sync-label">Add Manually</div>
+                    <div class="sync-sub text-muted">Enter name & phone number</div>
+                </div>
+            </div>
+            <div id="manualAddForm" style="display:none;margin-top:20px;display:flex;flex-direction:column;gap:12px">
+                <div class="form-group">
+                    <label class="form-label">Contact Name</label>
+                    <input class="form-input" placeholder="Aunt Carol" id="new-contact-name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone Number</label>
+                    <input class="form-input" placeholder="(555) 000-0000" id="new-contact-phone" type="tel" />
+                </div>
+                <button class="btn btn-primary" id="saveContactBtn" style="width:100%;justify-content:center">Add
+                    Contact</button>
+            </div>
+            <div id="syncSimulation" style="display:none;margin-top:20px;text-align:center">
+                <div class="sync-spinner"></div>
+                <p class="text-muted" id="syncStatus" style="margin-top:16px;font-size:0.9rem">Scanning contacts...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/student.js"></script>
+</body>
+
+</html>

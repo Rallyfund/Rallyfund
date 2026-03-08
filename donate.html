@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support Lincoln High Football — Rallyfund</title>
+    <meta name="description"
+        content="Help Jake Williams raise money for Lincoln High School Football. Every dollar goes directly to equipment, travel, and uniforms for student athletes." />
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/donate.css" />
+</head>
+
+<body class="donate-body">
+
+    <!-- HERO -->
+    <div class="donate-hero">
+        <div class="orb orb-green" style="width:400px;height:400px;top:-100px;left:-100px;opacity:0.2"></div>
+        <div class="orb orb-gold" style="width:300px;height:300px;bottom:-50px;right:-50px;opacity:0.15"></div>
+        <div class="donate-hero-content">
+            <div class="campaign-graphic">
+                <div class="graphic-badge">🏈</div>
+                <h1>Lincoln High <span class="text-gradient">Football</span></h1>
+                <p class="graphic-year">Fall 2026 Campaign</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- DONATION CONTENT -->
+    <div class="donate-container">
+
+        <!-- MAIN CARD -->
+        <div class="donate-main">
+
+            <!-- PROGRESS -->
+            <div class="donate-progress-card card">
+                <div class="dp-top">
+                    <div>
+                        <div class="dp-raised">$4,280</div>
+                        <div class="dp-of text-muted">raised of $8,000 goal</div>
+                    </div>
+                    <div class="dp-right">
+                        <div class="dp-stat">
+                            <span class="dp-stat-value text-green">241</span>
+                            <span class="dp-stat-label text-muted">donors</span>
+                        </div>
+                        <div class="dp-stat">
+                            <span class="dp-stat-value text-gold">12</span>
+                            <span class="dp-stat-label text-muted">days left</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-bar" style="margin-top:16px">
+                    <div class="progress-fill" style="width:53%"></div>
+                </div>
+                <div class="dp-pct text-muted" style="font-size:0.8rem;margin-top:6px">53% of goal reached</div>
+            </div>
+
+            <!-- STUDENT MESSAGE -->
+            <div class="student-message-card card">
+                <div class="sm-header">
+                    <div class="sm-avatar">JW</div>
+                    <div>
+                        <div class="sm-name">Jake Williams, #32</div>
+                        <div class="sm-role text-muted">Wide Receiver, Senior</div>
+                    </div>
+                    <div class="verified-badge badge badge-green" style="margin-left:auto">⚡ Verified</div>
+                </div>
+                <p class="sm-message">
+                    Hey! Football has been my whole world at Lincoln High. This year, our team is working harder than
+                    ever — but we need help covering equipment costs and our travel budget for the championship
+                    tournament.
+                </p>
+                <p class="sm-message" style="margin-top:12px">
+                    Any amount you can give means the world to us. Even $10 gets us closer. Thank you so much for
+                    supporting our guys. 🏈
+                </p>
+                <div class="sm-signature">— Jake</div>
+            </div>
+
+            <!-- DONATION FORM -->
+            <div class="card donation-form-card" id="donationFormCard">
+                <h3 class="card-heading" style="margin-bottom:8px">Choose an Amount</h3>
+                <p class="text-muted" style="font-size:0.85rem;margin-bottom:20px">Your donation goes directly to the
+                    program. Secure payment powered by Stripe.</p>
+
+                <!-- AMOUNT BUTTONS -->
+                <div class="amount-grid" id="amountGrid">
+                    <button class="amount-btn" data-amount="10">$10</button>
+                    <button class="amount-btn" data-amount="25">$25</button>
+                    <button class="amount-btn active" data-amount="50">$50</button>
+                    <button class="amount-btn" data-amount="100">$100</button>
+                    <button class="amount-btn" data-amount="250">$250</button>
+                    <button class="amount-btn custom-btn" data-amount="custom">Custom</button>
+                </div>
+
+                <div class="custom-amount-wrap" id="customAmountWrap" style="display:none">
+                    <div class="custom-amount-input-wrap">
+                        <span class="dollar-sign">$</span>
+                        <input type="number" class="form-input custom-amount-input" id="customAmount"
+                            placeholder="Enter amount" min="1" />
+                    </div>
+                </div>
+
+                <!-- ZERO-FEE PAYMENTS -->
+                <div class="donation-summary" style="margin-top:24px">
+                    <div class="flex-between">
+                        <span class="text-muted">Donation</span>
+                        <span id="summaryAmount" class="text-green font-bold">$50.00</span>
+                    </div>
+                    <div class="flex-between" style="font-size:0.8rem;margin-top:6px">
+                        <span class="text-muted">Processing fee (100% Free Transfer)</span>
+                        <span class="text-muted text-green">$0.00</span>
+                    </div>
+                    <div class="divider" style="margin:12px 0"></div>
+                    <div class="flex-between">
+                        <span class="font-bold">Total to Lincoln Football</span>
+                        <span id="summaryTotal" class="font-bold text-green" style="font-size:1.2rem">$50.00</span>
+                    </div>
+                </div>
+
+                <div style="display:grid;gap:12px;margin-top:24px">
+                    <button class="btn btn-lg" id="venmoBtn"
+                        style="background:#008CFF;color:white;width:100%;justify-content:center">
+                        💙 Pay with Venmo
+                    </button>
+                    <button class="btn btn-lg" id="cashappBtn"
+                        style="background:#00D632;color:white;width:100%;justify-content:center">
+                        💲 Pay with CashApp
+                    </button>
+                </div>
+                <p class="text-muted" style="font-size:0.8rem;text-align:center;margin-top:16px;line-height:1.5">
+                    100% of your donation goes directly to the team's account instantly. No credit card fees.
+                </p>
+            </div>
+
+            <!-- THANK YOU STATE -->
+            <div class="thankyou-card card" id="thankYouCard" style="display:none">
+                <div class="ty-icon">🎉</div>
+                <h2>Thank You!</h2>
+                <p class="text-muted" style="margin:12px 0;">Your donation of <span id="tyAmount"
+                        class="text-green font-bold">$50</span> has been received. Jake and the Lincoln Football team
+                    appreciate your support more than words can say.</p>
+                <div class="ty-share">
+                    <p style="font-weight:600;font-size:0.9rem;margin-bottom:12px">Share with your network:</p>
+                    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+                        <button class="btn btn-secondary btn-sm" onclick="shareMessage('text')">💬 Text a
+                            Friend</button>
+                        <button class="btn btn-secondary btn-sm" onclick="shareMessage('copy')">🔗 Copy Link</button>
+                    </div>
+                </div>
+                <a href="../index.html" class="btn btn-primary btn-sm" style="margin-top:16px">Learn About Rallyfund
+                    →</a>
+            </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="donate-sidebar">
+            <div class="card" style="margin-bottom:24px">
+                <h3 class="card-heading" style="margin-bottom:16px">Recent Donors</h3>
+                <div id="recentDonorsList"></div>
+            </div>
+            <div class="card">
+                <h3 class="card-heading" style="margin-bottom:12px">About Rallyfund</h3>
+                <p class="text-muted" style="font-size:0.85rem;line-height:1.65">Rallyfund is an AI-powered fundraising
+                    platform for schools and programs. We provide students with the tools to reach donors instantly
+                    using the contacts already on their phone.</p>
+                <a href="../index.html" class="btn btn-secondary btn-sm"
+                    style="margin-top:16px;width:100%;justify-content:center">Learn More →</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- RALLYFUND FOOTER BAR -->
+    <div style="background:var(--card-bg); border-top:1px solid var(--border); padding:20px 0; margin-top:60px">
+        <div class="container text-center">
+            <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:12px">
+                <span>⚡</span><span style="font-family:'Outfit',sans-serif;font-weight:800">Rallyfund</span>
+            </div>
+            <p class="text-muted" style="font-size:0.75rem">© 2026 Rallyfund. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+
+</html>

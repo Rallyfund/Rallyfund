@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How It Works — Rallyfund</title>
+    <meta name="description"
+        content="Learn exactly how Rallyfund syncing works, how AI scheduling operates, and how your program receives funds securely." />
+    <link rel="stylesheet" href="../css/global.css" />
+    <style>
+        /* Page specific styles */
+        .hiw-hero {
+            padding: 120px 24px 80px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(10, 15, 30, 1) 0%, rgba(13, 22, 46, 1) 100%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hiw-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        .hiw-section {
+            background: var(--navy-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 48px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hiw-sec-icon {
+            font-size: 3rem;
+            margin-bottom: 24px;
+        }
+
+        .hiw-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .hiw-text p {
+            color: var(--muted);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .hiw-step-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .hiw-step-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .hiw-step-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--green);
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .hiw-step-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .hiw-step-text p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .mock-visual {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hiw-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hiw-section {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="nav" id="navbar">
+        <div class="container">
+            <div class="nav-inner flex-between">
+                <a href="../index.html" class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">Rallyfund</span>
+                </a>
+                <div class="nav-links hide-mobile">
+                    <a href="../index.html#features">Features</a>
+                    <a href="#" class="active" style="color:var(--green)">How It Works</a>
+                    <a href="../index.html#pricing">Pricing</a>
+                </div>
+                <div class="nav-cta">
+                    <a href="dashboard.html" class="btn btn-secondary btn-sm">Dashboard Demo</a>
+                    <a href="../index.html#contact" class="btn btn-primary btn-sm">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hiw-hero">
+        <div class="container">
+            <span class="badge badge-blue mb-4" style="margin-bottom:16px;display:inline-block">The Rallyfund
+                Trust System</span>
+            <h1 class="hero-title">How It Actually Works.</h1>
+            <p class="hero-subtitle" style="margin: 20px auto 0; max-width: 700px;">
+                Curious about the technical details? Here is exactly how students sync their contacts, how texts are
+                sent, and how your program securely receives the money.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="hiw-content">
+
+        <!-- SEC 1: CONTACTS -->
+        <section class="hiw-section">
+            <div class="orb orb-green" style="width:200px;height:200px;top:-50px;right:-50px;opacity:0.1"></div>
+            <div class="hiw-sec-icon">📱</div>
+            <h2 style="font-size:2rem;margin-bottom:32px">1. Syncing Student Contacts</h2>
+
+            <div class="hiw-grid">
+                <div class="col-lg-6">
+                    <p class="lead mb-4">The magic of Rallyfund is that students don't need to manually type in phone
+                        numbers or go
+                        back and forth with donors. Everything is handled through a seamless, automated flow.</p>
+
+                    <ul class="hiw-step-list" style="margin-top:32px">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <div class="step-body">
+                                <h3>Contact Syncing</h3>
+                                <p>When a student joins your campaign, they download the Rallyfund app. The app securely
+                                    scans their phone contacts (with permission) and identifies potential donors.</p>
+                            </div>
+                        </div>
+                        <li class="hiw-step-item">
+                            <div class="hiw-step-num">B</div>
+                            <div class="hiw-step-text">
+                                <h4>Instant Syncing</h4>
+                                <p>Upon approval, the app reads their address book and filters out irrelevant numbers.
+                                    The student can select who to include, and the contacts are securely uploaded to our
+                                    database within seconds.</p>
+                            </div>
+                        </li>
+                        <li class="hiw-step-item">
+                            <div class="hiw-step-num">C</div>
+                            <div class="hiw-step-text">
+                                <h4>Privacy First</h4>
+                                <p>Contact data is heavily encrypted. We never sell, share, or repurpose a student's
+                                    contact list. It is strictly used for this single fundraising campaign.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mock-visual">
+                    <h3 style="margin-bottom:16px;font-size:1.1rem;color:var(--white)">Student App View</h3>
+                    <div
+                        style="background:var(--navy);border-radius:16px;padding:24px;border:1px solid var(--border);max-width:280px;margin:0 auto">
+                        <div style="font-size:2.5rem;margin-bottom:12px">📥</div>
+                        <div class="permission-prompt">
+                            <p style="font-size:0.85rem;color:var(--muted);margin-bottom:20px">Allow Rallyfund to access
+                                your contacts?</p>
+                            <div class="d-flex gap-3">
+                                <button class="btn btn-secondary"
+                                    style="width:100%;justify-content:center">Deny</button>
+                                <button class="btn btn-primary" style="width:100%;justify-content:center">Allow
+                                    Access</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEC 2: SENDING MESSAGES -->
+        <section class="hiw-section">
+            <div class="orb orb-gold" style="width:200px;height:200px;bottom:-50px;left:-50px;opacity:0.1"></div>
+            <div class="hiw-sec-icon">🤖</div>
+            <h2 style="font-size:2rem;margin-bottom:32px">2. AI-Optimized Message Sending</h2>
+
+            <div class="hiw-grid">
+                <div class="hiw-text" style="order:2">
+                    <p>Traditional fundraisers use a generic "bot" number to blast out spam texts. We do something much
+                        more powerful and personal.</p>
+
+                    <ul class="hiw-step-list" style="margin-top:32px">
+                        <li class="hiw-step-item">
+                            <div class="hiw-step-num" style="background:var(--gold)">A</div>
+                            <div class="hiw-step-text">
+                                <h4>AI Determines the Time</h4>
+                                <p>Our backend AI analyzes the contact's timezone and demographic likelihood to
+                                    determine the absolute perfect time they are likely to read a text and donate (e.g.,
+                                    Thursday at 6:30 PM).</p>
+                            </div>
+                        </li>
+                        <li class="hiw-step-item">
+                            <div class="hiw-step-num" style="background:var(--gold)">B</div>
+                            <div class="hiw-step-text">
+                                <h4>Push Notification to Student</h4>
+                                <p>At that exact moment, we send a Push Notification to the <i>student's phone</i>:
+                                    "Time to message Grandma Pat!"</p>
+                            </div>
+                        </li>
+                        <li class="hiw-step-item">
+                            <div class="hiw-step-num" style="background:var(--gold)">C</div>
+                            <div class="hiw-step-text">
+                                <h4>Sent from the Real Phone Number</h4>
+                                <p>The student taps the notification, which opens their native iMessage/SMS app. The
+                                    message (written by our AI) and the donor link are already pre-filled. The student
+                                    just taps "Send". <b>The message comes from the student's real phone number</b>,
+                                    ensuring a 99% open rate and destroying the "spam" filter.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mock-visual" style="order:1">
+                    <h3 style="margin-bottom:16px;font-size:1.1rem;color:var(--white)">Native iOS SMS Flow</h3>
+                    <div
+                        style="background:#1C1C1E;border-radius:16px;padding:16px;border:1px solid #333;max-width:280px;margin:0 auto;text-align:left">
+                        <div
+                            style="display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #333">
+                            <div
+                                style="width:36px;height:36px;border-radius:50%;background:#8E8E93;display:flex;align-items:center;justify-content:center;font-size:0.8rem">
+                                GP</div>
+                            <div style="font-weight:600;color:white">Grandma Pat</div>
+                        </div>
+                        <div
+                            style="background:#007AFF;color:white;padding:12px 14px;border-radius:18px 18px 4px 18px;font-size:0.9rem;line-height:1.4;margin-bottom:12px">
+                            Hi Grandma! I'm raising money for Lincoln Football this season. Would you support me?
+                            rallyfund.app/d/18x92
+                        </div>
+                        <div style="display:flex;justify-content:flex-end">
+                            <span style="font-size:0.7rem;color:#8E8E93">Delivered</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEC 3: PAYMENTS -->
+        <section class="hiw-section">
+            <div class="orb orb-blue" style="width:200px;height:200px;top:-50px;right:-50px;opacity:0.1"></div>
+            <div class="hiw-sec-icon">💳</div>
+            <h2 style="font-size:2rem;margin-bottom:32px">3. Payments & How You Get the Money</h2>
+
+            <div class="hiw-grid">
+                <div class="hiw-text">
+                    <p>We handle all PCI-compliant credit card routing through our integration with <b>Stripe</b>, the
+                        industry standard for online payments.</p>
+
+                    <ul class="hiw-step-list" style="margin-top:32px">
+                        <li class="hiw-step-item">
+                            <div class="hiw-step-num" style="background:#64A0FF;color:white">A</div>
+                            <div class="hiw-step-text">
+                                <h4>Program Onboarding</h4>
+                                <p>When a coach creates a campaign, they complete a secure "Stripe Connect" onboarding
+                                    flow. You attach your school or booster club's official bank account.</p>
+                            </div>
+                        </li>
+                        <li class="hiw-step-item">
+                            <div class="hiw-step-num" style="background:#64A0FF;color:white">B</div>
+                            <div class="hiw-step-text">
+                                <h4>Donors Check Out</h4>
+                                <p>Donors click the link in the student's text message and complete their checkout using
+                                    Credit Card, Apple Pay, or Google Pay.</p>
+                            </div>
+                        </li>
+                        <li class="hiw-step-item">
+                            <div class="hiw-step-num" style="background:#64A0FF;color:white">C</div>
+                            <div class="hiw-step-text">
+                                <h4>The Automated Split</h4>
+                                <p>The second a donor pays $100, the Stripe API automatically splits the funds. Our 10%
+                                    platform fee ($10) goes to Rallyfund, and <b>the remaining 90% ($90) goes directly
+                                        into your program's connected Stripe account.</b> You can initiate a bank payout
+                                    at any time.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mock-visual">
+                    <h3 style="margin-bottom:16px;font-size:1.1rem;color:var(--white)">Stripe Automated Split</h3>
+                    <div
+                        style="background:var(--navy);border-radius:16px;padding:24px;border:1px solid var(--border);max-width:280px;margin:0 auto">
+                        <div style="font-size:2rem;font-weight:800;color:var(--green);margin-bottom:4px">$100.00</div>
+                        <div style="font-size:0.85rem;color:var(--muted);margin-bottom:24px">Donor Payment</div>
+
+                        <div
+                            style="display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:12px">
+                            <span style="font-weight:600">Your Program</span>
+                            <span style="color:var(--green);font-weight:700">$90.00</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;padding-bottom:12px">
+                            <span style="color:var(--muted)">Rallyfund Fee (10%)</span>
+                            <span style="color:var(--muted)">$10.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align:center;margin-top:64px">
+            <h3 style="font-size:1.8rem;margin-bottom:16px">Ready to start raising money?</h3>
+            <a href="../index.html#contact" class="btn btn-primary btn-lg">Request a Demo</a>
+        </div>
+
+    </div> <!-- End content -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom mt-5 pt-4 border-top">
+                <p class="text-muted">© 2026 Rallyfund. All rights reserved.</p>
+            </div>
+            <p class="text-muted"><a href="../index.html" style="color:var(--green);text-decoration:none">Return to
+                    Home</a></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
