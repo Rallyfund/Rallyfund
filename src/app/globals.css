@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #1B3A6B;
+  --primary-light: #2a5298;
+  --accent: #22C55E;
+  --accent-dark: #16a34a;
+  --gold: #F59E0B;
+  --background: #FFFFFF;
+  --surface: #F9FAFB;
+  --text: #111827;
+  --text-secondary: #6B7280;
+  --error: #EF4444;
+  --success: #10B981;
+  --border: #E5E7EB;
+}
+
+@theme inline {
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-gold: var(--gold);
+  --color-surface: var(--surface);
+  --color-rf-text: var(--text);
+  --color-text-secondary: var(--text-secondary);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+
+/* Gradient utilities */
+.gradient-primary {
+  background: linear-gradient(135deg, #1B3A6B 0%, #2a5298 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #22C55E 0%, #16a34a 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, #0f2447 0%, #1B3A6B 50%, #1e4080 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #22C55E, #F59E0B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Animation utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.pulse-green {
+  animation: pulse-green 2s infinite;
+}
+
+/* Section spacing */
+.section-padding {
+  padding: 5rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 3.5rem 0;
+  }
+}
