@@ -7,21 +7,24 @@ const config = {
     override: {
       wrapper: "cloudflare-node",
       converter: "edge",
-      // Use the Cloudflare-compatible incremental cache
+      proxyExternalRequest: "fetch",
       incrementalCache: "dummy",
       tagCache: "dummy",
       queue: "dummy",
     },
   },
-
+  edgeExternals: ["node:crypto"],
   middleware: {
     external: true,
     override: {
       wrapper: "cloudflare-edge",
       converter: "edge",
       proxyExternalRequest: "fetch",
+      incrementalCache: "dummy",
+      tagCache: "dummy",
+      queue: "dummy",
     },
   },
 };
 
-module.exports = config;
+export default config;
