@@ -1,8 +1,6 @@
-// @ts-check
-const { buildOptions } = require("@opennextjs/cloudflare");
+import type { OpenNextConfig } from "@opennextjs/cloudflare";
 
-/** @type {import("@opennextjs/cloudflare").OpenNextConfig} */
-const config = {
+const config: OpenNextConfig = {
   default: {
     override: {
       wrapper: "cloudflare-node",
